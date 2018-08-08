@@ -4,7 +4,7 @@
 
 int main()
 {
-    std::function<int(int)> multiplay_by_five = std::bind(std::multiplies<int>(), std::placeholders::_1, 5);
+    std::function<int(int)> multiplay_by_five = [](int a){ return std::multiplies<int>()(a, 5);};
     std::cout << multiplay_by_five(11) << std::endl;
     return 0;
 }
